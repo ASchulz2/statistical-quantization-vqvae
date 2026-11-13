@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "statistical-quantization-vqvae"
+version = "0.1.0"
+description = "Research implementation and experimental study of vector quantization and statistical codebooks in VQ-VAE models."
+requires-python = ">=3.12"
+license = "MIT"
+keywords = [
+    "vq-vae",
+    "vector-quantization",
+    "statistical-quantization",
+    "codebook",
+    "rate-distortion",
+    "deep-learning",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dynamic = ["dependencies"]
+
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["classes*", "data_preprocessing*"]
+namespaces = true
+
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra"
+pythonpath = ["."]
+testpaths = ["tests"]
