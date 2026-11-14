@@ -35,24 +35,26 @@ The project evaluates discrete latent representations using reconstruction and c
 
 The empirical assignment entropy is calculated as
 
-\[
-H(K)=-\sum_{k=1}^{M}p_k\log_2(p_k),
-\]
+The empirical codebook entropy is defined as:
 
-where \(p_k\) denotes the empirical probability of assigning a latent vector to codebook entry \(k\).
+$$
+H(K) = -\sum_{k=1}^{M} p_k \log_2(p_k)
+$$
 
-Perplexity is defined as
+where $p_k$ denotes the empirical probability of assigning a latent vector to codebook entry $k$.
 
-\[
-\operatorname{Perplexity}=2^{H(K)},
-\]
+The corresponding perplexity is:
 
-and codebook utilization as
+$$
+\operatorname{Perplexity} = 2^{H(K)}
+$$
 
-\[
+Codebook utilization measures the fraction of codewords that are actively used:
+
+$$
 \operatorname{Utilization}
-=\frac{\text{Number of active codewords}}{M}.
-\]
+= \frac{\text{Number of active codewords}}{M}
+$$
 
 Together with reconstruction distortion, these measurements enable an empirical investigation of rate-distortion trade-offs in discrete latent representations.
 
