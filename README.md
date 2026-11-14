@@ -132,7 +132,7 @@ Python 3.12 or newer is required.
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ASchulz2/statistical-quantization-vqvae.git
 cd statistical-quantization-vqvae
 ```
 
