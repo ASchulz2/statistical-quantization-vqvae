@@ -70,6 +70,8 @@ The following visualizations illustrate the learned validation latent spaces for
 
 These visualizations are intended to illustrate the evolution of latent representations and codebook entries during training. They should be interpreted alongside the quantitative codebook and reconstruction metrics.
 
+- **Generated samples:** [View generated samples (PDF)](docs/figures/samples.pdf) — outputs from the generative experiment.
+
 ## Experimental Setup
 
 The implementation supports:
