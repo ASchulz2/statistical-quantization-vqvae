@@ -6,9 +6,15 @@ The project focuses on discrete latent representations, statistical codebook mod
 
 ## Research Focus
 
-Vector Quantized Variational Autoencoders represent continuous encoder outputs through discrete codebook entries.
+Vector Quantized Variational Autoencoders represent continuous encoder
+outputs through discrete codebook entries. The VQ-VAE formulation
+introduced by van den Oord et al. (2018) provides the architectural
+foundation for this project.
 
-This project investigates statistical extensions to conventional vector quantization, in which codebook entries can be represented by distributions rather than deterministic vectors.
+This project investigates statistical extensions to conventional
+vector quantization, in which codebook entries can be represented
+by distributions rather than deterministic vectors
+(Gray & Neuhoff, 1998; Pagès, 2015).
 
 The implementation includes:
 
@@ -19,7 +25,14 @@ The implementation includes:
 - **Stochastic quantization:** Optional sampling from statistical codebook distributions.
 - **Straight-through estimation:** Gradient propagation through the discrete quantization operation.
 
+
+
 ## Quantization Analysis
+
+The entropy and perplexity measurements are based on information-theoretic
+concepts (Shannon, 1948; Cover & Thomas, 2006), while the analysis of
+quantization efficiency is related to classical vector quantization
+and rate-distortion theory (Gersho & Gray, 1992; Gray & Neuhoff, 1998).
 
 The project evaluates discrete latent representations using reconstruction and codebook statistics.
 
@@ -33,8 +46,6 @@ The project evaluates discrete latent representations using reconstruction and c
 | Dead codewords | Number of unused codebook entries |
 | Distortion | Reconstruction error |
 
-The empirical assignment entropy is calculated as
-
 The empirical codebook entropy is defined as:
 
 $$
@@ -46,13 +57,13 @@ where $p_k$ denotes the empirical probability of assigning a latent vector to co
 The corresponding perplexity is:
 
 $$
-Perplexity = 2^{H(K)}
+\mathrm{Perplexity} = 2^{H(K)}
 $$
 
 Codebook utilization measures the fraction of codewords that are actively used:
 
 $$
-Utilization
+\mathrm{Utilization}
 = \frac{\text{Number of active codewords}}{M}
 $$
 
@@ -230,3 +241,20 @@ pytest -v
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.
+
+## References
+
+### Information Theory and Quantization
+
+- Shannon, C. E. (1948). [A Mathematical Theory of Communication](https://doi.org/10.1002/j.1538-7305.1948.tb01338.x). *Bell System Technical Journal, 27*(3), 379–423.
+- Cover, T. M., & Thomas, J. A. (2006). [Elements of Information Theory](https://doi.org/10.1002/047174882X) (2nd ed.). Wiley.
+- Gray, R. M., & Neuhoff, D. L. (1998). [Quantization](https://doi.org/10.1109/18.720541). *IEEE Transactions on Information Theory, 44*(6), 2325–2383.
+- Gersho, A., & Gray, R. M. (1992). [Vector Quantization and Signal Compression](https://doi.org/10.1007/978-1-4615-3626-0). Springer.
+- Pagès, G. (2015). [A Survey of Quantization Methods for Numerical Approximation of Probability Measures](https://doi.org/10.1214/15-SS111). *Statistics Surveys, 9*, 89–147.
+- Graf, S., & Luschgy, H. (2000). [Foundations of Quantization for Probability Distributions](https://doi.org/10.1007/BFb0103945). Springer.
+
+### Neural Discrete Representations and Generative Models
+
+- van den Oord, A., Vinyals, O., & Kavukcuoglu, K. (2018). [Neural Discrete Representation Learning](https://arxiv.org/abs/1711.00937).
+- Kingma, D. P., & Welling, M. (2022). [Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114).
+- Rezende, D. J., Mohamed, S., & Wierstra, D. (2014). [Stochastic Backpropagation and Approximate Inference in Deep Generative Models](https://arxiv.org/abs/1401.4082).
