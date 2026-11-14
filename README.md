@@ -46,13 +46,13 @@ where $p_k$ denotes the empirical probability of assigning a latent vector to co
 The corresponding perplexity is:
 
 $$
-\operatorname{Perplexity} = 2^{H(K)}
+Perplexity = 2^{H(K)}
 $$
 
 Codebook utilization measures the fraction of codewords that are actively used:
 
 $$
-\operatorname{Utilization}
+Utilization
 = \frac{\text{Number of active codewords}}{M}
 $$
 
